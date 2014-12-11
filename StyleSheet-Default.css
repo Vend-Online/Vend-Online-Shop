@@ -1,2 +1,11 @@
 ﻿body {
+    background:url("Images/Logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+.Background {
+    
+    
 }
