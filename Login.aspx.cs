@@ -11,4 +11,19 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+    protected void Username_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void Password_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void Loginpage_loginbutton_Click(object sender, EventArgs e)
+    {
+        if (true)
+        {
+            
+        }
+    }
 }

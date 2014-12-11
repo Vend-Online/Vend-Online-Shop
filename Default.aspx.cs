@@ -11,4 +11,8 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void Login_Button_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Login.aspx");
+    }
 }
