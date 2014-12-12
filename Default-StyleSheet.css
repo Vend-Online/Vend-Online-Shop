@@ -1,0 +1,25 @@
+﻿body {
+    background:url("Images/Logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+.font1 {
+    font-family:Calibri;
+    font-style:normal;
+    font-size:x-large;
+    color:darkgreen;
+    text-align:left;
+}
+.font2 {
+    font-family:'Arial Unicode MS';
+    font-style:italic;
+    font-size:small;
+    color:darkgreen;
+    text-align:left;
+}
+.BtnPos {
+    float:right;
+}

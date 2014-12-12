@@ -1,0 +1,34 @@
+﻿body {
+    background-image:url("Images/Logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+
+
+.BoksPos1 {
+    /*text-align:center;
+    position:absolute;
+    left:43%;*/
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.BoksPos2 {
+    /*text-align:center;
+    position:absolute;
+    
+   align-content:center;*/
+
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+.BtnPos {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

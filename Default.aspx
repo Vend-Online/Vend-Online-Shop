@@ -3,6 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Button ID="Login_Button" runat="server" Text="Login" OnClick="Login_Button_Click" />
-</asp:Content>
+    <link href="Default-StyleSheet.css" rel="stylesheet" />
+    <div class="font1">
+        <asp:Label ID="Velkomst_Label" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="Login_Button" CssClass="BtnPos" runat="server" Text="Login" OnClick="Login_Button_Click" />
+                       
+    </div>
+     <div class="font2">
+        <asp:Label ID="Partner_Label" runat="server" Text="Label"></asp:Label>
+    </div>
+    
+        
+    </asp:Content>
 
