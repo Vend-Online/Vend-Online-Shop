@@ -9,13 +9,15 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
         {
-            Login_Admin.Text = "Du er nu logget ind som admin";
+            if (Session["Login"] != null && Session["Login_User"].ToString() == "User")
+            {
+                Login_User.Text = "Du er nu logget ind som bruger";
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
-        else
-        {
-            Response.Redirect("Login.aspx");
-        }     
     }
 }

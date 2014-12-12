@@ -9,6 +9,6 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Login_Fejl.Text = "Venligst indtast brugernavn og password";
     }
 }

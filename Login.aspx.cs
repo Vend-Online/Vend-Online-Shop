@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -23,7 +24,50 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (true)
         {
-            
+            string USR = "", PWD = "";
+            string Type = "";
+            if (Username.Text != "" && Password.Text != "")
+            {
+                SqlConnection DBCon = new SqlConnection("Data Source=CPHDAED1-L00129;Initial Catalog=Skole;Integrated Security=True");
+                SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);
+                SQLCmd.Connection.Open();
+                SqlDataReader Reader = SQLCmd.ExecuteReader();
+
+                while (Reader.Read())
+                {
+                    USR = Reader["Username"].ToString();
+                    PWD = Reader["UserPwd"].ToString();
+                    Type = Reader["Usertype"].ToString();
+                }
+                SQLCmd.Connection.Close();
+
+                if (USR == Username.Text && PWD == Password.Text)
+                {
+                    Session["Login"] = Username.Text;
+                    if (Type == "User")
+                    {
+                        Session["Login_User"] = Type.ToString();
+                        Response.Redirect("Users.aspx");
+                    }
+                    else if (Type == "Admin")
+                    {
+                        Session["Login_Admin"] = Type.ToString();
+                        Response.Redirect("Admin.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Login_Fejl.aspx");
+                    }
+                }
+                else
+                {
+                    Response.Redirect("Login_fejl.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("Login_fejl.aspx");
+            }
         }
     }
 }
