@@ -1,2 +1,31 @@
 ﻿body {
+    background-image:url("Images/Wending Logo.png");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+
+}
+
+.Velkomst-style {
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    font-size:x-large;
+}
+
+.Info-style {
+    color:black;
+    font-family:Calibri;
+    font-style:italic;
+    margin-top:7%;
+    float:left;
+
+}
+.Kontakt-style {
+    color:black;
+    font-family:Calibri;
+    font-style:normal;
+    float:right;
+    margin-top:7%;
+
 }
