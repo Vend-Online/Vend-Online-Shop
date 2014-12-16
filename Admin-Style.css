@@ -1,0 +1,18 @@
+﻿body {
+    background-image:url(Images/Logo.png);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+}
+
+.font1 {
+    color:darkgreen;
+    font-style:oblique;
+    font-family:Calibri;
+    font-size:larger;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    
+
+}

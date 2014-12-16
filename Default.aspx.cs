@@ -9,6 +9,8 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Velkomst_Label.Text = "Velkommen til vores hjemmeside";
+        Partner_Label.Text = "Din fortukne vendingmachine partner";
 
     }
     protected void Login_Button_Click(object sender, EventArgs e)

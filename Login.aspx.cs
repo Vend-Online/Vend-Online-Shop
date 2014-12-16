@@ -28,14 +28,16 @@ public partial class Default2 : System.Web.UI.Page
             string Type = "";
             if (Username.Text != "" && Password.Text != "")
             {
-                SqlConnection DBCon = new SqlConnection("Data Source=CPHDAED1-L00129;Initial Catalog=Vending;Integrated Security=True");
-                SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);
+
+                SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");
+
+                SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);
                 SQLCmd.Connection.Open();
                 SqlDataReader Reader = SQLCmd.ExecuteReader();              
 
                 while (Reader.Read())
                 {
-                    USR = Reader["Username"].ToString();
+                    USR = Reader["UserName"].ToString();
                     PWD = Reader["UserPwd"].ToString();
                     Type = Reader["Usertype"].ToString();
                 }
@@ -56,12 +58,14 @@ public partial class Default2 : System.Web.UI.Page
                     }
                     else
                     {
-                        Response.Redirect("Login_Fejl.aspx");
+                        //Response.Redirect("Login_Fejl.aspx");
+                        ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
                     }
                 }
                 else
                 {
-                    Response.Redirect("Login_fejl.aspx");
+                    //Response.Redirect("Login_fejl.aspx");
+                    ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
                 }
             }
             else
