@@ -28,16 +28,16 @@ public partial class Default2 : System.Web.UI.Page
             string Type = "";
             if (Username.Text != "" && Password.Text != "")
             {
-                SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");
-                SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);
+                SqlConnection DBCon = new SqlConnection("Data Source=NRJ-Lenovo;Initial Catalog=Vending;Integrated Security=True");
+                SqlCommand SQLCmd = new SqlCommand("select * from Users where Username = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);
                 SQLCmd.Connection.Open();
                 SqlDataReader Reader = SQLCmd.ExecuteReader();
 
                 while (Reader.Read())
                 {
-                    USR = Reader["UserName"].ToString();
+                    USR = Reader["Username"].ToString();
                     PWD = Reader["UserPwd"].ToString();
-                    Type = Reader["UserType"].ToString();
+                    Type = Reader["Usertype"].ToString();
                 }
                 SQLCmd.Connection.Close();
 
