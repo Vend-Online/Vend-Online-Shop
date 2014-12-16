@@ -21,8 +21,22 @@
     font-style:italic;
     margin-top:7%;
     float:left;
+    position:relative;
+    left:10px;
 
 }
+
+.Medarbejder-style {
+    color:black;
+    font-family:Calibri;
+    font-style:normal;
+    margin-top:7%;
+    float:right;
+    position:relative;
+    right:10px;
+    
+}
+
 .Adress-style {
     color:white;
     font-family:Calibri;
@@ -31,6 +45,9 @@
     margin:0 auto;
     text-align:left;*/
     float:left;
+    position:relative;
+    left:10px;
+    top:3px;
     
 }
 .Mail-syle {
@@ -41,6 +58,9 @@
     margin:0 auto;
     text-align:right;*/
     float:right;
+    position:relative;
+    right:10px;
+    top:3px;
 }
 
 .Tlf-style {
@@ -50,7 +70,8 @@
     display:block;
     margin:0 auto;
     text-align:center;
-    top:0px;
+    position:relative;
+    top:3px;
 }
 
 

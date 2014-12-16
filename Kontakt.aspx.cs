@@ -11,9 +11,12 @@ public partial class Default2 : System.Web.UI.Page
     {
         Velkomst_Label.Text = "This is our contact page";
         Info_Label.Text = "This is the info label";
-        Adresse_Label.Text = "Telegrafvej 9, 2750 Ballerup";
+        Medarbejder_Label.Text = "The Creators:" + "<br/>" + "Alexander" + "<br/>" + "Christopher" + "<br/>" + "Nicolaj" + "<br/>" + "Peter";
+        Adresse_Label.Text = "Telegrafvej 9," + "<br/>" + "2750 Ballerup";
         Tlf_Label.Text = "38 17 70 00";
         Mail_Label.Text = "aia@tec.dk";
+
+        //"+Environment.NewLine+"
         
     }
 }
