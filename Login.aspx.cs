@@ -29,7 +29,7 @@ public partial class Default2 : System.Web.UI.Page
             if (Username.Text != "" && Password.Text != "")
             {
                 SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");
-                SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);                
+                SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName_PK = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);                
                 SQLCmd.Connection.Open();
                 
 
@@ -37,7 +37,7 @@ public partial class Default2 : System.Web.UI.Page
                 
                 while (Reader.Read())
                 {
-                    USR = Reader["UserName"].ToString();
+                    USR = Reader["UserName_PK"].ToString();
                     PWD = Reader["UserPwd"].ToString();
                     Type = Reader["UserType"].ToString();
                 }

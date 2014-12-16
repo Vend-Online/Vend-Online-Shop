@@ -5,8 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Button ID="Produkt" runat="server" Text="Produkter" OnClick="Produkt_Click" />    
-     <asp:Label ID="VaelgUserRight" runat="server" Text="Vælg brugerrettighed(Husk dette skal implimenteres under Admin.aspx):"></asp:Label><asp:DropDownList ID="DropDownUserRigst" runat="server" Height="20px" OnSelectedIndexChanged="DropDownUserRigst_SelectedIndexChanged" Width="123px" AutoPostBack="True"></asp:DropDownList>
-            <br/> 
+     <asp:Label ID="VaelgUserRight" runat="server" Text="Vælg brugerrettighed:"></asp:Label><asp:DropDownList ID="DropDownUserRigst" runat="server" Height="20px" OnSelectedIndexChanged="DropDownUserRigst_SelectedIndexChanged" Width="123px" AutoPostBack="True"></asp:DropDownList>
+            <br/>             
             <asp:Label ID="BrugernavnLabel" runat="server" Text="Indtast brugernavn:"></asp:Label><asp:TextBox ID="UserNameField" runat="server" OnTextChanged="UserNameField_TextChanged"></asp:TextBox>
             <br/>
             <asp:Label ID="AdgangskodeLabel" runat="server" Text="Indtast adgangskode:"></asp:Label><asp:TextBox ID="PWDField" TextMode="Password" runat="server" OnTextChanged="PWDField_TextChanged"></asp:TextBox>                      

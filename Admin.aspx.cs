@@ -16,16 +16,18 @@ public partial class Default2 : System.Web.UI.Page
         {
             Login_Admin.Text = "Du er nu logget ind som admin!";
             //Response.AddHeader("REFRESH", "3;URL=Produkt.aspx");
+            if (IsPostBack) return;
+            DropDownUserRigst.Items.Clear();
             DropDownUserRigst.Items.Add("Vælg rettighed");
            
             DB DBClass = new DB();
-            DBClass.DBMethod("Select * from UserType");
+            DBClass.DBMethod("Select UserType from Bruger");
             DBClass.DBCon.Open();
             SqlDataReader Reader = DBClass.SQLcmd.ExecuteReader();
 
             while (Reader.Read())
             {
-                DropDownUserRigst.Items.Add(Reader["userrightsCategory"].ToString());
+                DropDownUserRigst.Items.Add(Reader["UserType"].ToString());
             }
         }
     }
@@ -40,10 +42,10 @@ public partial class Default2 : System.Web.UI.Page
                 DB DBClass = new DB();
                 switch (DropDownUserRigst.SelectedValue.ToString())
                 {
-                    case "admin":
+                    case "Admin":
                         if (true)
                         {
-                            DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "'," + 25 + ", " + 1 + ")");
+                            DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "', '"+DropDownUserRigst.SelectedValue.ToString()+"', " + CVRField.Text + "," + PostnrField.Text + ")");
                             DBClass.DBCon.Open();
                             DBClass.SQLcmd.ExecuteNonQuery();
                             DBClass.DBCon.Dispose();
@@ -56,8 +58,8 @@ public partial class Default2 : System.Web.UI.Page
                         Postnr.Text = "";
                         break;
 
-                    case "user":
-                        DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "', " + 15 + ", " + 3 + ")");
+                    case "User":
+                        DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "')");
                         DBClass.DBCon.Open();
                         DBClass.SQLcmd.ExecuteNonQuery();
                         DBClass.DBCon.Dispose();
@@ -70,7 +72,7 @@ public partial class Default2 : System.Web.UI.Page
                         break;
 
                     default:
-                        Response.Redirect("Opretbruger.aspx");
+                        Response.Redirect("Admin.aspx");
                         break;
                 }
             }
