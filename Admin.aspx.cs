@@ -101,4 +101,16 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+    protected void PWDField_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void CVR_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void Postnr_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
