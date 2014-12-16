@@ -20,6 +20,9 @@
     color:darkgreen;
     text-align:left;
 }
-.BtnPos {
+.BtnPos1 {
+    float:right;
+}
+.BtnPos2 {
     float:right;
 }
