@@ -37,7 +37,7 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     USR = Reader["Username"].ToString();
                     PWD = Reader["UserPwd"].ToString();
-                    Type = Reader["Usertype"].ToString();
+                    Type = Reader["UserType"].ToString();
                 }
                 SQLCmd.Connection.Close();
 
