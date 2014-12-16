@@ -3,6 +3,8 @@
     background-repeat:no-repeat;
     background-attachment:fixed;
     background-position:center;
+    margin: 0 0 100px; 
+    bottom:10%;
 
 }
 
@@ -21,11 +23,44 @@
     float:left;
 
 }
-.Kontakt-style {
-    color:black;
+.Adress-style {
+    color:white;
     font-family:Calibri;
     font-style:normal;
+    /*display:block;
+    margin:0 auto;
+    text-align:left;*/
+    float:left;
+    
+}
+.Mail-syle {
+    color:white;
+    font-family:Calibri;
+    font-style:normal;
+    /*display:block;
+    margin:0 auto;
+    text-align:right;*/
     float:right;
-    margin-top:7%;
+}
 
+.Tlf-style {
+    color:white;
+    font-family:Calibri;
+    font-style:normal;
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    top:0px;
+}
+
+
+
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color:green;
 }
