@@ -13,7 +13,21 @@
     margin:0 auto;
     text-align:center;
     font-size:x-large;
+    position:relative;
+    top:5px;
+    left:-10px;
 }
+
+.BtnPos {
+    color:white;
+    background-color:green;
+    float:right;
+    /*position:relative;
+    left:10px;
+    top:5px;*/
+}
+
+
 
 .Info-style {
     color:black;

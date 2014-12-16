@@ -70,7 +70,8 @@ public partial class Default2 : System.Web.UI.Page
             }
             else
             {
-                Response.Redirect("Login_fejl.aspx");
+                //Response.Redirect("Login_fejl.aspx");
+                ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
             }
         }
     }

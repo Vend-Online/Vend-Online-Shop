@@ -21,8 +21,13 @@
     text-align:left;
 }
 .BtnPos1 {
-    float:right;
+    color: white;
+    background-color: green;
+    float: right;
 }
+
 .BtnPos2 {
+    color:white;
+    background-color:green;
     float:right;
 }

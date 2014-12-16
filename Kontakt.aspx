@@ -4,7 +4,8 @@
     <link href="Kontakt-Style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Label ID="Velkomst_Label" CssClass="Velkomst-style" runat="server" Text=""></asp:Label>
+    <asp:Button ID="Forside_Button" CssClass="BtnPos" runat="server" Text="Forside" OnClick="Forside_Button_Click" />
+    <asp:Label ID="Velkomst_Label" CssClass="Velkomst-style" runat="server" Text=""></asp:Label>    
     <br />
     <asp:Label ID="Info_Label" CssClass="Info-style" runat="server" Text=""></asp:Label>
     <asp:Label ID="Medarbejder_Label" CssClass="Medarbejder-style" runat="server" Text="Label"></asp:Label>
