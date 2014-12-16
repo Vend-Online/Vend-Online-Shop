@@ -34,19 +34,19 @@ public partial class Default2 : System.Web.UI.Page
         if (UserNameField.Text != "" || PWDField.Text != "" || CVR.Text != "" || Postnr.Text != "")
         {
             Sub_String Check = new Sub_String();
-            
+
             if (Check.SubStr(UserNameField.Text) != "Badboy" && Check.SubStr(CVRField.Text) != "Badboy")
             {
                 DB DBClass = new DB();
                 switch (DropDownUserRigst.SelectedValue.ToString())
                 {
-                    case "Admin":
+                    case "admin":
                         if (true)
                         {
-                        DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "','" + "', " + 25 + ", " + 1 + ")");
-                        DBClass.DBCon.Open();
-                        DBClass.SQLcmd.ExecuteNonQuery();
-                        DBClass.DBCon.Dispose();
+                            DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "'," + 25 + ", " + 1 + ")");
+                            DBClass.DBCon.Open();
+                            DBClass.SQLcmd.ExecuteNonQuery();
+                            DBClass.DBCon.Dispose();
                         }
 
                         TryAgainLabel.Text = "";
@@ -56,34 +56,35 @@ public partial class Default2 : System.Web.UI.Page
                         Postnr.Text = "";
                         break;
 
-                    case "User":
-                         DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "','" + "', " + 25 + ", " + 1 + ")");
+                    case "user":
+                        DBClass.DBMethod("insert into users values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "', " + 15 + ", " + 3 + ")");
                         DBClass.DBCon.Open();
                         DBClass.SQLcmd.ExecuteNonQuery();
                         DBClass.DBCon.Dispose();
-                        }
 
                         TryAgainLabel.Text = "";
                         UserNameField.Text = "";
                         PWDField.Text = "";
                         CVR.Text = "";
                         Postnr.Text = "";
-                        break;
+                        break;                
 
-                    //default:
-                    //    Response.Redirect("Opretbruger.aspx");
-                    //    break;
+
+                    default:
+                        Response.Redirect("Opretbruger.aspx");
+                        break;
                 }
             }
             else
             {
-               TryAgainLabel.Text = "Dit brugernavn og adgangskode må ikke indeholde karakterne: ('), (=) eller (-). Prøv venligst igen.";
-               UserNameField.Text = "";
-               PWDField.Text = "";
-               CVR.Text = "";
-               Postnr.Text = "";
+                TryAgainLabel.Text = "Dit brugernavn og adgangskode må ikke indeholde karakterne: ('), (=) eller (-). Prøv venligst igen.";
+                UserNameField.Text = "";
+                PWDField.Text = "";
+                CVR.Text = "";
+                Postnr.Text = "";
             }
-        }         
+        }
+    }
     
     protected void Produkt_Click(object sender, EventArgs e)
     {
