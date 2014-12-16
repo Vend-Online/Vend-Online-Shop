@@ -13,8 +13,7 @@ public partial class Default2 : System.Web.UI.Page
         if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
         {
             Login_Admin.Text = "Du er nu logget ind som admin!";
-            //Thread.Sleep(5000);
-            //Response.Redirect("Produkt.aspx");
+            Response.AddHeader("REFRESH", "3;URL=Produkt.aspx");
         }
         else
         {
