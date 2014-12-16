@@ -25,7 +25,7 @@ public partial class Default2 : System.Web.UI.Page
 
             while (Reader.Read())
             {
-                DropDownUserRigst.Items.Add(Reader["userrightsCategory"].ToString());
+                DropDownUserRigst.Items.Add(Reader["UserType"].ToString());
             }
         }
     }
@@ -35,7 +35,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             Sub_String Check = new Sub_String();
             
-            if (Check.SubStr(UserNameField.Text) != "Badboy" && Check.SubStr(PhoneField.Text) != "Badboy")
+            if (Check.SubStr(UserNameField.Text) != "Badboy" && Check.SubStr(CVRField.Text) != "Badboy")
             {
                 DB DBClass = new DB();
                 switch (DropDownUserRigst.SelectedValue.ToString())
@@ -68,7 +68,7 @@ public partial class Default2 : System.Web.UI.Page
                         PWDField.Text = "";
                         CVR.Text = "";
                         Postnr.Text = "";
-                        
+                        break;
 
                     //default:
                     //    Response.Redirect("Opretbruger.aspx");
@@ -93,20 +93,12 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+    protected void DropDownUserRigst_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
     protected void UserNameField_TextChanged(object sender, EventArgs e)
     {
 
     }
-    protected void PWDField_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-    protected void PhoneField_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-    protected void AliasField_TextChanged(object sender, EventArgs e)
-    {
-
-    }    
 }
