@@ -25,7 +25,7 @@ public partial class Default2 : System.Web.UI.Page
 
             while (Reader.Read())
             {
-                DropDownUserRigst.Items.Add(Reader["UserType"].ToString());
+                DropDownUserRigst.Items.Add(Reader["userrightsCategory"].ToString());
             }
         }
     }
@@ -67,8 +67,7 @@ public partial class Default2 : System.Web.UI.Page
                         PWDField.Text = "";
                         CVR.Text = "";
                         Postnr.Text = "";
-                        break;                
-
+                        break;
 
                     default:
                         Response.Redirect("Opretbruger.aspx");
