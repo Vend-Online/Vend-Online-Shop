@@ -1,2 +1,38 @@
 ﻿body {
+   
 }
+
+.font1 {
+    font-family: 'Arial Unicode MS';
+    font-style: italic;
+    font-size: x-large;
+    color: darkgreen;
+    text-align: left;
+}
+
+
+
+.Table_Cells {
+
+    text-align: center;
+}
+
+.Table_Sub1
+{
+    width:20%;
+    text-align: center;
+    font-weight: bold;    
+}
+
+.Table_Sub2
+{
+    width:60%;
+    border: 1px solid yellow;
+    text-align: center;    
+}
+
+.Table_Sub3
+{
+    width:20%;       
+}
+
