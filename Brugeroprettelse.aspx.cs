@@ -23,15 +23,13 @@ public partial class Default2 : System.Web.UI.Page
             DBClass.DBCon.Open();
             SqlDataReader Reader = DBClass.SQLcmd.ExecuteReader();
 
-            while (Reader.Read())
-            {
-                DropDownUserRigst.Items.Add(Reader["UserType"].ToString());
-            }
+            DropDownUserRigst.Items.Add("Admin");
+            DropDownUserRigst.Items.Add("User");
         }
     }
     protected void Create_Click(object sender, EventArgs e)
     {
-        if (UserNameField.Text != "" || PWDField.Text != "" || CVR.Text != "" || Postnr.Text != "")
+        if (UserNameField.Text != "" || PWDField.Text != "" || CVRField.Text != "" || PostnrField.Text != "")
         {
             Sub_String Check = new Sub_String();
 
@@ -41,37 +39,18 @@ public partial class Default2 : System.Web.UI.Page
                 switch (DropDownUserRigst.SelectedValue.ToString())
                 {
                     case "Admin":
-                        if (true)
-                        {
-                            DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "', '"+DropDownUserRigst.SelectedValue.ToString()+"', " + CVRField.Text + "," + PostnrField.Text + ")");
-                            DBClass.DBCon.Open();
-                            DBClass.SQLcmd.ExecuteNonQuery();
-                            DBClass.DBCon.Dispose();
-                        }
-
-                        TryAgainLabel.Text = "";
-                        UserNameField.Text = "";
-                        PWDField.Text = "";
-                        CVR.Text = "";
-                        Postnr.Text = "";
-                        break;
-
                     case "User":
-                        DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "','" + CVR.Text + "','" + Postnr.Text + "')");
+                        DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "', '"+DropDownUserRigst.SelectedValue.ToString()+"', " + CVRField.Text + "," + PostnrField.Text + ")");
                         DBClass.DBCon.Open();
                         DBClass.SQLcmd.ExecuteNonQuery();
-                        DBClass.DBCon.Dispose();
+                        DBClass.DBCon.Dispose();                        
 
                         TryAgainLabel.Text = "";
                         UserNameField.Text = "";
                         PWDField.Text = "";
-                        CVR.Text = "";
-                        Postnr.Text = "";
-                        break;
-
-                    default:
-                        Response.Redirect("Admin.aspx");
-                        break;
+                        CVRField.Text = "";
+                        PostnrField.Text = "";
+                        break;                   
                 }
             }
             else
@@ -79,8 +58,8 @@ public partial class Default2 : System.Web.UI.Page
                 TryAgainLabel.Text = "Dit brugernavn og adgangskode må ikke indeholde karakterne: ('), (=) eller (-). Prøv venligst igen.";
                 UserNameField.Text = "";
                 PWDField.Text = "";
-                CVR.Text = "";
-                Postnr.Text = "";
+                CVRField.Text = "";
+                PostnrField.Text = "";
             }
         }
     }    
@@ -107,6 +86,10 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void Postnr_TextChanged(object sender, EventArgs e)
     {
-    
+        
+    }
+    protected void Return_Admin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Admin.aspx");
     }
 }
