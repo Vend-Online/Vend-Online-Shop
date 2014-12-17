@@ -17,7 +17,7 @@
     <asp:Label ID="PostnrLabel" CssClass="BoksPos2" runat="server" Text="Indtast Postnr:"></asp:Label><asp:TextBox ID="PostnrField" CssClass="BoksPos2" runat="server" OnTextChanged="Postnr_TextChanged"></asp:TextBox>
     <br />
     <asp:Button ID="Create_Btn" CssClass="BtnPos2" runat="server" Text="Opret bruger" OnClick="Create_Click" />
-    <asp:Label ID="TryAgainLabel" runat="server" Text=""></asp:Label>
+    <asp:Label ID="TryAgainLabel" CssClass="BoksPos2" runat="server" Text=""></asp:Label>
     
     
 </asp:Content>
