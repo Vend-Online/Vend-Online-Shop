@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Button ID="Return_Admin" CssClass="BtnPos1" runat="server" Text="Tilbage til admin page" OnClick="Return_Admin_Click" />
 
-    <asp:Label ID="VaelgUserRight" CssClass="BoksPos1" runat="server" Text="Vælg brugerrettighed:"></asp:Label><asp:DropDownList ID="DropDownUserRigst" CssClass="BoksPos1" runat="server" Height="20px" OnSelectedIndexChanged="DropDownUserRigst_SelectedIndexChanged" Width="123px" AutoPostBack="False"></asp:DropDownList>
+    <asp:Label ID="VaelgUserRight" CssClass="BoksPos1" runat="server" Text="Vælg brugerrettighed:"></asp:Label><asp:DropDownList ID="DropDownUserRigst" CssClass="BoksPos3" runat="server" OnSelectedIndexChanged="DropDownUserRigst_SelectedIndexChanged" AutoPostBack="False"></asp:DropDownList>
     <br />
     <asp:Label ID="BrugernavnLabel" CssClass="BoksPos2" runat="server" Text="Indtast brugernavn:"></asp:Label><asp:TextBox ID="UserNameField" CssClass="BoksPos2" runat="server" OnTextChanged="UserNameField_TextChanged"></asp:TextBox>
     <br/>

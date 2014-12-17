@@ -22,8 +22,8 @@
     font-size:medium;
     position:relative;
     top:5px;
-    left:-10px;
-    width:500px;
+    /*left:-10px;*/
+    width:400px;
 
 }
 .BoksPos2 {
@@ -31,4 +31,16 @@
     margin: 0 auto;
     text-align: center;
     
+}
+.BoksPos3 {
+    display: block;
+    position: relative;
+    width: 140px;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    height: 20px;
+    top: 8px;
+    z-index: 1000;
+    left: 78px;
 }
