@@ -8,14 +8,15 @@
  
  <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+
     <div class="font1">
          
     <asp:Label ID="Label1" runat="server" Text="Produktoversigt"></asp:Label>
     <br/>
-   
-
     
     </div>
+     <asp:Button ID="Forside_Button" CssClass="BtnPos" runat="server" Text="Forside" OnClick="Forside_Button_Click" />
+
 
    <asp:Table ID="Table1" runat="server" CssClass="Table_Master2">
         

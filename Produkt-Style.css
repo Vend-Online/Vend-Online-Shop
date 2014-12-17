@@ -41,4 +41,11 @@
     width:20%;       
 }
 
-
+.BtnPos {
+    color:white;
+    background-color:green;
+    float:right;
+    position:absolute;
+    right:10px;
+    top:5px;
+}

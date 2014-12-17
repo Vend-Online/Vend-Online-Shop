@@ -12,6 +12,16 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["Login"] != null)
+        {
+            
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
+
         string DB_Input = "";
 
         if (IsPostBack) return;
@@ -78,5 +88,9 @@ public partial class Default2 : System.Web.UI.Page
                 Image1.ImageUrl = "/Vend-Online-Shop/Images/Lays.jpg";
                 break;
         }
+    }
+    protected void Forside_Button_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
     }
 }
