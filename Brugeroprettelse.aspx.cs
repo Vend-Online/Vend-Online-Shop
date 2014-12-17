@@ -26,6 +26,10 @@ public partial class Default2 : System.Web.UI.Page
             DropDownUserRigst.Items.Add("Admin");
             DropDownUserRigst.Items.Add("User");
         }
+        else if (Session["Login"] != null && Session["Login_User"].ToString() == "User")
+        {
+            Response.Redirect("Users.aspx");
+        }
     }
     protected void Create_Click(object sender, EventArgs e)
     {
