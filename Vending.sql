@@ -33,13 +33,10 @@ else
 	end
 go
 
-
-
 if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'Bruger')
 	begin
 	create table Bruger(
-	BrugerId int constraint Bruger_BrugerId_PK primary key Not Null,
-	UserName varchar(30) not null,
+	UserName_PK varchar(30) primary key,
 	UserPwd varchar(30) not null,
 	UserType varchar(20) Not Null,
 	CVR int not null,
@@ -76,8 +73,8 @@ go
 if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'Produkt')
 	begin
 	create table Produkt(
-	ProduktId int constraint Produkt_ProduktId_PK primary key Not Null,
-	ProduktName varchar(30) not null,
+	ProduktId int unique identity(1,1),
+	Produkt_Name_PK varchar(50) primary key,
 	Antal int not null,
 	Pris int not null,
 	P_Lev int not null,
@@ -92,31 +89,18 @@ else
 	end
 go
 
---if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'Ordre')
---	begin
---	create table Ordre(
---	OrdreId int constraint Ordre_OrdreId_PK primary key identity (1, 1) Not Null,
-
---	)
---	print 'Tabellen "Ordre" er nu oprettet'
---	end	
---else
---	begin
---	print 'Tabellen "Ordre" eksisterer allerede'
---	end
---go
-
 if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'BrugerOrdre')
 	begin
 	create table BrugerOrdre(
-	BOId int constraint BrugerOrdre_BOId_PK primary key identity (1,1) Not Null,
-	BOB_FK int Not Null,
-	BOP_FK int Not Null,
+	BrugerOrdreId int unique identity(1,1),
+	Bruger_Ordre_PK varchar(50) primary key,
+	BrugerOrdre_FK varchar(30) Not Null,
+	BrugerOrdreProdukt_FK varchar(50) Not Null,
 
-	ProduktName varchar(30) Not Null
+	--ProduktName varchar(30) Not Null,
 
-	foreign key (BOB_FK) references Bruger(BrugerId),
-	foreign key (BOP_FK) references Produkt(ProduktId)
+	foreign key (BrugerOrdre_FK) references Bruger(UserName_PK),
+	foreign key (BrugerOrdreProdukt_FK) references Produkt(Produkt_Name_PK)
 	)
 	print 'Tabellen "ProduktOrdre" er nu oprettet'
 	end	
@@ -146,30 +130,34 @@ insert into PostNrBy values
 	(4000, 'Roskilde'),
 	(2770, 'Kastrup'),
 	(2300, 'København S')
-
 go
 
 
 insert into Bruger values
-	(160, 'Admin', '1234', 'Admin', 31502004, 3650),
-	(161, 'Gert', '1234', 'User', 31502005, 4000),
-	(162, 'Guest', '1234', 'Guest', 31502006, 2770)
-
+	('Admin', '1234', 'Admin', 31502004, 3650),
+	('Gert', '1234', 'User', 31502005, 4000)
 go
 
 
 insert into Lev values
-	(1, 'Coca Cola', 37649185, 4000)
-
+	(1, 'Carlsberg', 37649185, 4000),
+	(2, 'Faxe Bryghus', 37649186, 3650),
+	(3, 'Toms', 37649187, 2770),
+	(4, 'KiMs', 37649188, 2300),
+	(5, 'Stimirol', 37649189, 2000)
 go
 
 
 insert into Produkt values
-	(134, 'Cola Cola',1,9,1)
+	('Coca Cola',295,14,1),
+	('Faxe Kondi', 323, 14,2),
+	('Tuborg', 545, 14,1),
+	('Snickers', 510, 13,3),
+	('Sour Cream & Onion', 200, 13,4)
 
 go
 
-insert into BrugerOrdre values(160, 134,  'Coca Cola')
+insert into BrugerOrdre values('y','Gert','Coca Cola')
 
 go
 
