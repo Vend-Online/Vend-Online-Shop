@@ -15,7 +15,8 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
         {
-            PWDField.Text = FormsAuthentication.HashPasswordForStoringInConfigFile(PWDField.Text, "SHA1");            
+            //PWDField.Text = FormsAuthentication.HashPasswordForStoringInConfigFile(PWDField.Text, "SHA1");      
+            
             if (IsPostBack) return;
             DropDownUserRigst.Items.Clear();
             DropDownUserRigst.Items.Add("Vælg rettighed");
