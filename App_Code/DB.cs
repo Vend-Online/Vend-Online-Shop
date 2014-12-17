@@ -6,7 +6,7 @@ using System.Web;
 
 public class DB
 {
-    public SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");    
+    public SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Vending;Data Source=REMOTEAPPS");    
     public SqlCommand SQLcmd;
 
     public void DBMethod(string s)

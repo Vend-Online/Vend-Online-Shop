@@ -13,6 +13,7 @@
      <div class="font2">
         <asp:Label ID="Partner_Label" runat="server" Text="Label"></asp:Label>
     </div>
+    <asp:Image ID="Image1" runat="server" />
     
         
     </asp:Content>
