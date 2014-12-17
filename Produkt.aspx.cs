@@ -25,7 +25,7 @@ public partial class Default2 : System.Web.UI.Page
 
         DBCon.DBMethod(DB_Input);
 
-        DBCon.DBCon.Open();
+         DBCon.DBCon.Open();
 
         SqlDataReader Reader = DBCon.SQLcmd.ExecuteReader();
 
