@@ -47,24 +47,7 @@
                 <asp:Label ID="Label_ProdOp" runat="server" Text="Produkt oplysninger:"></asp:Label>
             </asp:TableCell>
         </asp:TableRow>
-       <%-- 
-        <asp:TableRow>            
-            <asp:TableCell CssClass="Table_Sub3">
-                <asp:Label ID="Label_Height" runat="server" Text="Height:"></asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        
-        <asp:TableRow>            
-            <asp:TableCell CssClass="Table_Sub3">
-                <asp:Label ID="Label_Width" runat="server" Text="Width:"></asp:Label>
-            </asp:TableCell>            
-        </asp:TableRow>
-
-        <asp:TableRow>            
-            <asp:TableCell CssClass="Table_Sub3">
-                <asp:Label ID="Label_Depth" runat="server" Text="Depth:"></asp:Label>
-            </asp:TableCell>            
-        </asp:TableRow>--%>
+       
 
     </asp:Table>
 

@@ -40,7 +40,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Vis_Produkt(object sender, EventArgs e)
     {
-        DB_Input = "Produkt_Name_PK, Pris, = '" + ListBox_Produkt.SelectedValue + "'";
+        DB_Input = "Produkt_Name_PK, Pris, ListBox_Produkt.SelectedValue";
 
         DB DBCon = new DB();
 
@@ -62,7 +62,7 @@ public partial class Default2 : System.Web.UI.Page
         DBCon.DBCon.Close();
 
 
-        DB_Input2 = "Select Produkt_Name_PK = '" + ListBox_Produkt.SelectedValue + "'";
+        DB_Input2 = "Select Produkt_Name_PK" + ListBox_Produkt.SelectedValue;
 
         DBCon = new DB();
 
@@ -72,13 +72,7 @@ public partial class Default2 : System.Web.UI.Page
 
         Reader = DBCon.SQLcmd.ExecuteReader();
 
-        //while (Reader.Read())
-        //{
-        //    Label_Weight.Text = "Weight:" + Reader["ProduktId"].ToString();
-        //    Label_Height.Text = "Height:" + Reader["Produkt_Name_PK"].ToString();
-        //    Label_Width.Text = "Width:" + Reader["Pris"].ToString();
-        //    Label_Depth.Text = "Depth:" + Reader["P_Lev"].ToString();
-        //}
+      
 
         DBCon.DBCon.Dispose();
         DBCon.DBCon.Close();
