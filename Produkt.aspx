@@ -35,13 +35,7 @@
                 <asp:Label ID="Label_Pris" runat="server" Text="Pris:"></asp:Label>
             </asp:TableCell>
         </asp:TableRow>
-        
-        <asp:TableRow>            
-            <asp:TableCell CssClass="Table_Sub3">
-                <asp:Label ID="Label_LevPris" runat="server" Text="Leverings pris:"></asp:Label>
-            </asp:TableCell>
-        </asp:TableRow>
-        
+
        <asp:TableRow>            
             <asp:TableCell CssClass="Table_Sub3">
                 <asp:Label ID="Label_ProdOp" runat="server" Text="Produkt oplysninger:"></asp:Label>
