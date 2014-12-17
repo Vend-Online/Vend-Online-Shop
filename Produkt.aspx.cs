@@ -68,8 +68,14 @@ public partial class Default2 : System.Web.UI.Page
             case "Faxe Kondi":
                 Image1.ImageUrl = "/Images/faxe.jpg";
                 break;
-            case "B":
-                Image1.ImageUrl = "";
+            case "Tuborg":
+                Image1.ImageUrl = "/Images/Tuborg.jpg";
+                break;
+            case "Snickers":
+                Image1.ImageUrl = "/Images/Snickers.jpg";
+                break;
+            case "Sour Cream & Onion":
+                Image1.ImageUrl = "/Images/KiMs.jpg";
                 break;
         }
     }
