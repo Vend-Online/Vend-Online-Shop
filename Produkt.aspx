@@ -24,7 +24,7 @@
                 Produkt
             </asp:TableCell>
             <asp:TableCell CssClass="Table_Sub2" RowSpan="8">
-                <asp:Image ID="Image1" ImageUrl="" runat="server" />
+                <asp:Image ID="Image1" Height="130" runat="server" />
             </asp:TableCell>
             <asp:TableCell CssClass="Table_Sub1">
                 Oplysninger
