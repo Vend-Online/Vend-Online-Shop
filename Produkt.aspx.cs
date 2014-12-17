@@ -63,7 +63,7 @@ public partial class Default2 : System.Web.UI.Page
         switch (ListBox_Produkt.SelectedValue)
         {
             case "Coca Cola":
-                Image1.ImageUrl = "/Images/coke.jpeg";
+                Image1.ImageUrl = "/Images/Cola.jpg";
                 break;
             case "Faxe Kondi":
                 Image1.ImageUrl = "/Images/faxe.jpg";
@@ -75,7 +75,7 @@ public partial class Default2 : System.Web.UI.Page
                 Image1.ImageUrl = "/Images/Snickers.jpg";
                 break;
             case "Sour Cream & Onion":
-                Image1.ImageUrl = "/Images/KiMs.jpg";
+                Image1.ImageUrl = "/Images/Lays.jpg";
                 break;
         }
     }
