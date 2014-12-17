@@ -27,10 +27,19 @@
     text-align: center;
     
 }
-.BtnPos {
+.BtnPos1 {
     color:white;
     background-color:green;
     display: block;
     margin: 0 auto;
     text-align: center;
+}
+
+.BtnPos2 {
+    color:white;
+    background-color:green;
+    float:right;
+    position:absolute;
+    right:10px;
+    top:5px;
 }

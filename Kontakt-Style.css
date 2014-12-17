@@ -10,21 +10,22 @@
 
 .Velkomst-style {
     display:block;
-    margin:0 auto;
+    margin:auto;
     text-align:center;
     font-size:x-large;
     position:relative;
     top:5px;
     left:-10px;
+    width:500px;
 }
 
 .BtnPos {
     color:white;
     background-color:green;
     float:right;
-    /*position:relative;
-    left:10px;
-    top:5px;*/
+    position:absolute;
+    right:10px;
+    top:5px;
 }
 
 
