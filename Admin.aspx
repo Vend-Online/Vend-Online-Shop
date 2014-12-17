@@ -4,10 +4,9 @@
     <link href="Admin-Style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Button ID="Produkt" runat="server" Text="Produkter" OnClick="Produkt_Click" />  
-    <br /> 
-    <asp:Button ID="Brugeroprettelse" runat="server" Text="Brugeroprettelse" OnClick="Brugeroprettelse_Click" /> 
-         <asp:Label ID="Login_Admin" CssClass="font1" runat="server" Text=""></asp:Label>
+    <asp:Button ID="Produkt" CssClass="BtnPos1" runat="server" Text="Produkter" OnClick="Produkt_Click" />  
+    <asp:Button ID="Brugeroprettelse" CssClass="BtnPos2" runat="server" Text="Brugeroprettelse" OnClick="Brugeroprettelse_Click" /> 
+    <asp:Label ID="Login_Admin" CssClass="font1" runat="server" Text=""></asp:Label>
 
 </asp:Content>
 

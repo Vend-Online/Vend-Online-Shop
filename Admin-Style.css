@@ -6,13 +6,29 @@
 }
 
 .font1 {
-    color:darkgreen;
-    font-style:oblique;
-    font-family:Calibri;
-    font-size:larger;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    color:green;
+    display:block;
+    margin:auto;
+    text-align:center;
+    font-size:x-large;
+    position:relative;
+    top:5px;
+    left:-10px;
+    width:500px;
     
 
+}
+
+
+.BtnPos1 {
+    color: white;
+    background-color: green;
+    float: right;
+}
+
+
+.BtnPos2 {
+    color:white;
+    background-color:green;
+    float:right;
 }

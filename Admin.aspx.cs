@@ -12,7 +12,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Login_Admin.Text = "Du er nu logget ind som admin!";
     }
     protected void Produkt_Click(object sender, EventArgs e)
     {
