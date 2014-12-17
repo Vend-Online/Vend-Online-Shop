@@ -30,6 +30,10 @@ public partial class Default2 : System.Web.UI.Page
         {
             Response.Redirect("Users.aspx");
         }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
     protected void Create_Click(object sender, EventArgs e)
     {
