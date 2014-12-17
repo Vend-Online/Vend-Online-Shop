@@ -1,4 +1,8 @@
 ﻿body {
+    background-image:url("Images/Wending Logo.png");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
 }
 
 .BtnPos1 {
