@@ -40,7 +40,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Vis_Produkt(object sender, EventArgs e)
     {
-        DB_Input = "Produkt_Name_PK, Pris, ListBox_Produkt.SelectedValue";
+        DB_Input = "Select Produkt_Name_PK, Pris, Antal from Produkt where Produkt_Name_PK = '" + ListBox_Produkt.SelectedValue + "'";
 
         DB DBCon = new DB();
 
@@ -54,25 +54,8 @@ public partial class Default2 : System.Web.UI.Page
         {
             Label_Name.Text = "Produkt navn:" + Reader["Produkt_Name_PK"].ToString();
             Label_Pris.Text = "Pris:" + Reader["Pris"].ToString();
-            Label_LevPris.Text = "ProduktId:" + Reader["ProduktId"].ToString();
             Label_ProdOp.Text = "Produkt oplysninger:" + Reader["Produkt_Name_PK"].ToString();
         }
-
-        DBCon.DBCon.Dispose();
-        DBCon.DBCon.Close();
-
-
-        DB_Input2 = "Select Produkt_Name_PK" + ListBox_Produkt.SelectedValue;
-
-        DBCon = new DB();
-
-        DBCon.DBMethod(DB_Input2);
-
-        DBCon.DBCon.Open();
-
-        Reader = DBCon.SQLcmd.ExecuteReader();
-
-      
 
         DBCon.DBCon.Dispose();
         DBCon.DBCon.Close();
@@ -82,8 +65,8 @@ public partial class Default2 : System.Web.UI.Page
             case "Coca Cola":
                 Image1.ImageUrl = "/Images/coke.jpeg";
                 break;
-            case "A":
-                Image1.ImageUrl = "";
+            case "Faxe Kondi":
+                Image1.ImageUrl = "/Images/faxe.jpg";
                 break;
             case "B":
                 Image1.ImageUrl = "";
