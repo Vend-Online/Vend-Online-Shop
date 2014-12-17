@@ -7,13 +7,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Threading;
 using System.Web.Security;
+using System.Security.Cryptography;
 
 public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
-        {            
+        {
+            PWDField.Text = FormsAuthentication.HashPasswordForStoringInConfigFile(PWDField.Text, "SHA1");            
             if (IsPostBack) return;
             DropDownUserRigst.Items.Clear();
             DropDownUserRigst.Items.Add("Vælg rettighed");
@@ -48,7 +50,7 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     case "Admin":
                     case "User":
-                        DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "', '"+DropDownUserRigst.SelectedValue.ToString()+"', " + CVRField.Text + "," + PostnrField.Text + ")");
+                        DBClass.DBMethod("insert into Bruger values('" + UserNameField.Text + "','" + PWDField.Text + "', '"+DropDownUserRigst.SelectedValue.ToString()+"', '" + CVRField.Text + "','" + PostnrField.Text + "')");
                         DBClass.DBCon.Open();
                         DBClass.SQLcmd.ExecuteNonQuery();
                         DBClass.DBCon.Dispose();                        
