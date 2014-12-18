@@ -15,7 +15,7 @@
     <br/>
     
     </div>
-     <asp:Button ID="Forside_Button" CssClass="BtnPos" runat="server" Text="Forside" OnClick="Forside_Button_Click" />
+     <asp:Button ID="Forside_Button" CssClass="BtnPos" runat="server" Text="Tilbage" OnClick="Forside_Button_Click" />
 
 
    <asp:Table ID="Table1" runat="server" CssClass="Table_Master2">

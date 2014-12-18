@@ -13,29 +13,35 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
-        {
-            PWDField.Text = FormsAuthentication.HashPasswordForStoringInConfigFile(PWDField.Text, "SHA1");      
+        try{
+            if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
+            {
+                PWDField.Text = FormsAuthentication.HashPasswordForStoringInConfigFile(PWDField.Text, "SHA1");      
             
-            if (IsPostBack) return;
-            DropDownUserRigst.Items.Clear();
-            DropDownUserRigst.Items.Add("Vælg rettighed");
+                if (IsPostBack) return;
+                DropDownUserRigst.Items.Clear();
+                DropDownUserRigst.Items.Add("Vælg rettighed");
            
-            DB DBClass = new DB();
-            DBClass.DBMethod("Select UserType from Bruger");
-            DBClass.DBCon.Open();
-            SqlDataReader Reader = DBClass.SQLcmd.ExecuteReader();
+                DB DBClass = new DB();
+                DBClass.DBMethod("Select UserType from Bruger");
+                DBClass.DBCon.Open();
+                SqlDataReader Reader = DBClass.SQLcmd.ExecuteReader();
 
-            DropDownUserRigst.Items.Add("Admin");
-            DropDownUserRigst.Items.Add("User");
-        }
-        else if (Session["Login"] != null && Session["Login_User"].ToString() == "User")
+                DropDownUserRigst.Items.Add("Admin");
+                DropDownUserRigst.Items.Add("User");
+            }
+        
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+         }
+        catch (Exception)
         {
-            Response.Redirect("Users.aspx");
-        }
-        else
-        {
+            Session["Login_User"] = null;
+            Session["Login"] = null;
             Response.Redirect("Login.aspx");
+            throw;
         }
     }
     protected void Create_Click(object sender, EventArgs e)

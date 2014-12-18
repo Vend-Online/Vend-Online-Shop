@@ -12,14 +12,25 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        try
+        {
         if (Session["Login"] != null && Session["Login_Admin"].ToString() == "Admin")
-        {
-            Login_Admin.Text = "Du er nu logget ind som admin!";
+                {
+                    Login_Admin.Text = "Du er nu logget ind som admin!";
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx");
+                }        
         }
-        else
+        catch (Exception)
         {
+            Session["Login_User"] = null;
+            Session["Login"] = null;
             Response.Redirect("Login.aspx");
-        }        
+            throw;
+        }
+        
     }
     protected void Produkt_Click(object sender, EventArgs e)
     {

@@ -91,6 +91,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void Forside_Button_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Response.Redirect("Admin.aspx");
     }
 }
