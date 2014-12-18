@@ -34,6 +34,7 @@ public partial class Default2 : System.Web.UI.Page
                 SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");
                 SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName_PK = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);                
                 SQLCmd.Connection.Open();
+                //string PWD1 = FormsAuthentication.HashPasswordForStoringInConfigFile(Password.Text, "SHA256");
                 
 
                 SqlDataReader Reader = SQLCmd.ExecuteReader();              
@@ -42,7 +43,7 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     USR = Reader["UserName_PK"].ToString();
                     PWD = Reader["UserPwd"].ToString();
-                    //PWD = FormsAuthentication.HashPasswordForStoringInConfigFile(PWD, "SHA1");
+                    
                     Type = Reader["UserType"].ToString();
                 }                
                 SQLCmd.Connection.Close();
