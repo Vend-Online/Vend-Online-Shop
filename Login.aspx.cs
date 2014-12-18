@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+using System.Threading;
+using System.Web.Security;
+using System.Security.Cryptography;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -27,7 +30,7 @@ public partial class Default2 : System.Web.UI.Page
             string USR = "", PWD = "";
             string Type = "";
             if (Username.Text != "" && Password.Text != "")
-            {
+            {                
                 SqlConnection DBCon = new SqlConnection("Data Source='.\';Initial Catalog=Vending;Integrated Security=True");
                 SqlCommand SQLCmd = new SqlCommand("select * from Bruger where UserName_PK = '" + Username.Text + "'and UserPwd = '" + Password.Text + "' ", DBCon);                
                 SQLCmd.Connection.Open();
@@ -39,8 +42,9 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     USR = Reader["UserName_PK"].ToString();
                     PWD = Reader["UserPwd"].ToString();
+                    //PWD = FormsAuthentication.HashPasswordForStoringInConfigFile(PWD, "SHA1");
                     Type = Reader["UserType"].ToString();
-                }
+                }                
                 SQLCmd.Connection.Close();
 
                 if (USR == Username.Text && PWD == Password.Text)
